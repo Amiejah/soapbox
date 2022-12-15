@@ -47,10 +47,20 @@ cp .env.example .env
 ```
 
 Install the project through Sail
-
-Open the folder and install the composer packages
 ```
-sail composer install
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php81-composer:latest \
+    composer install --ignore-platform-reqs
+```
+
+(or change the php version if necessary).
+
+Run docker
+```
+sail up
 ```
 
 Install npm 
@@ -58,8 +68,12 @@ Install npm
 sail npm install && sail npm run dev
 ```
 
-
 Run the migration (default)
 ```
-sail php artisan migrate
+sail php artisan migrate:fresh --seed
+```
+
+Link storage
+```
+sail php artisan storage:link
 ```

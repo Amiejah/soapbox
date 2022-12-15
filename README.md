@@ -34,5 +34,32 @@ This repository is a Laravel project created for a assessment. It's been setup u
 - AplineJS
 
 ## Installation & usage
+This project is built on top of Laravel Sail. So make sure that you have Docker installed. 
+
+Clone the repo to a local folder
+```
+git clone ... 
+```
+
+copy and rename the .env.example file
+```
+cp .env.example .env
+```
+
+Install the project through Sail
+
+Open the folder and install the composer packages
+```
+sail composer install
+```
+
+Install npm 
+```
+sail npm install && sail npm run dev
+```
 
 
+Run the migration (default)
+```
+sail php artisan migrate
+```

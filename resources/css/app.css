@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* In most cases we would create classes based on tailwind, something like:
+.foo {
+  @apply .....;
+}
+
+But for this test this is not really needed.
+*/
